@@ -1,0 +1,105 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+form {
+    max-width: 400px;
+    margin: auto;
+}
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 15px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+.hidden {
+    display: none;
+    margin-top: 25px;
+}
+.form-card{
+    margin-top: 30px;
+}
+.other-form{
+    display: block;
+    /* float: right; */
+}
+.self-from{
+    display: none;
+}
+.main-div{
+    border: 0.1px solid rgb(178, 170, 170);
+    margin-top: 25px;
+    margin-left: 10%;
+    margin-right: 10%;
+    /* margin-bottom: 25px; */
+    padding-bottom: 25px;
+}
+.alignForms{
+    display: flex;
+    flex-direction: row;
+    /* align-content: space-between; */
+    justify-content: space-evenly;
+}
+#step2{
+    margin-top: 30px;
+    /* border: 0.1px solid rgb(197, 181, 181); */
+
+}
+.next-btn , .submit-btn{
+    margin-left: 160px;
+    background-color: rgb(57, 168, 57);
+    color: white;
+    padding: 20px !important;
+    margin-top: 10px;
+}
+
+.disabled-btn{
+    cursor: not-allowed;
+    display: none;
+}
+.summary-details{
+    margin: 0;
+    width: 400px;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    /* border: 1px solid rgb(210, 198, 198);
+    padding: 40px;
+    background: #fafafa; */
+}
+.summary-details div{
+    margin-bottom: 18px;
+}
+.show-summary-details{
+    margin: 0;
+    width: 50%;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    border: 1px solid rgb(210, 198, 198);
+    padding: 40px;
+    background: #fafafa;
+}
+.show-summary-details div{
+    margin-bottom: 18px;
+    margin-left: 30px;
+}
+.removeMainDiv{
+    display: none;
+}
+span{
+    font-size: 17px;
+}

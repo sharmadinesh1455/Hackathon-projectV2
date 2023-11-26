@@ -1,0 +1,10 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+.login-btns{
+    margin-left: 10px;
+    background: #4f60be !important;
+    color: white !important;
+    /* font-weight: bold; */
+}

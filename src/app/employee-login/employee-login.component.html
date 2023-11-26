@@ -1,0 +1,97 @@
+
+<!-- <div class="card"> -->
+    <!-- <form id="step1" class="visible">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+    
+        <label for="geid">GEID:</label>
+        <input type="text" id="geid" name="geid" required>
+    
+        <label for="reimbursementFor">Reimbursement For:</label>
+        <select id="reimbursementFor" name="reimbursementFor" onchange="toggleAnotherPersonBlock()">
+            <option value="" disabled selected>Select option</option>
+            <option value="self">Self</option>
+            <option value="other">Other</option>
+        </select>
+    
+        <div id="anotherPersonBlock" class="hidden">
+            <h3>Details for Another Person</h3>
+            <label for="anotherPersonName">Another Person's Name:</label>
+            <input type="text" id="anotherPersonName" name="anotherPersonName" required>
+    
+            <label for="anotherPersonGeid">Another Person's GEID:</label>
+            <input type="text" id="anotherPersonGeid" name="anotherPersonGeid" required>
+        </div>
+    
+        <label for="category">Category:</label>
+        <select id="category" name="category" required>
+            <option value="" disabled selected>Select Category</option>
+            <option value="meal">Meal</option>
+            <option value="hospital">Hospital</option>
+            <option value="medicine">Medicine</option>
+        </select>
+    
+        <button type="button" onclick="nextStep()">Next</button>
+    </form>  -->
+<!-- </div> -->
+
+<div class="card main-div">
+    <div id="step1" class="form-card">
+        <form #userForm="ngForm" id="userData">
+            
+                <input placeholder="Name" class="form-control field-top-margin" type="text" name="name" id="name" [ngModel]="name" required>
+
+                <input placeholder="GEID" type="text" name="geid" id="geid" name="geid" [ngModel]="geid" required>
+            
+            
+                <label for="reimbursementFor">Reimbursement For:</label>
+                <select aria-placeholder="Reimbursement For" id="reimbursementFor" name="reimbursementFor" [ngModel]="reimbursementFor" (ngModelChange)="toggleAnotherPersonBlock($event)">
+                    <option value="" disabled selected>Select option</option>
+                    <option value="self">Self</option>
+                    <option value="other">Other</option>
+                </select>
+          
+                <div id="anotherPersonBlock" class="anotherPersonBlock" class="hidden">
+                    <h2 style="text-align: center; font-size: 25px;">Details for Another Person</h2>
+                    <input placeholder="Another Person's Name" type="text" id="anotherPersonName" name="anotherPersonName" [ngModel]="anotherPersonName" required>
+            
+                    <input placeholder="Another Person's GEID" type="text" id="anotherPersonGeid" name="anotherPersonGeid" [ngModel]="anotherPersonGeid" required>
+                </div>
+           
+                <label for="category">Category:</label>
+                    <select aria-placeholder="Category" id="category" name="category" required 
+                    name="category" [ngModel]="category" (ngModelChange)="selectedCategory($event)">
+                        <option value="" disabled selected>Select Category</option>
+                        <option value="meal">Meal</option>
+                        <option value="hospital">Accomodation</option>
+                        <option value="medicine">Transport</option>
+                    </select>
+            
+             <button mat-raised-button type="button" id="next-btn" class="next-btn" (click)="nextStep(userForm)">Next</button>
+        </form>
+    </div>
+
+    <div id="step2" class="hidden">
+        <h4 style="text-align: center;">Upload file </h4>
+        <br>
+        <form #fileForm="ngForm" id="userData" >
+            <!-- <label for="file">Upload File:</label> -->
+            <input placeholder="Upload File" type="file" id="file" name="file" (change)="selectedFile($event)" accept=".pdf, .doc, .docx"  >
+            <!-- accept=".pdf, .doc, .docx" -->
+            <button mat-raised-button type="button" class="submit-btn" (click)="submitForm(fileForm)">Submit</button>
+        </form>
+    </div>
+</div>
+
+<div class="summary-details">
+    <div>
+        <h2 style="text-align: center; margin-bottom: 30px;">Summary</h2>
+    </div>
+    <div> <span style="font-weight: bold;"> Name</span> :  <span style="padding-left: 200px;"> {{data.name}}</span></div>
+    <div> <span style="font-weight: bold;"> GEID : </span> <span style="padding-left: 200px;"> {{data.GEID}}</span> </div>
+    <div> <span style="font-weight: bold;"> Reimbursement For : </span> <span style="padding-left: 100px;"> {{data.reimbursementFor}}</span></div>
+    <div> <span style="font-weight: bold;"> Another Person Name :</span> <span style="padding-left: 70px;"> {{data.anotherPersonName}}</span> </div>
+    <div> <span style="font-weight: bold;"> Another Person Geid : </span> <span style="padding-left: 70px;"> {{data.anotherPersonGeid}}</span> </div>
+    <div> <span style="font-weight: bold;"> Category</span>  : <span style="padding-left: 180px;"> {{data.category}}</span> </div>
+    <div> <span style="font-weight: bold;"> File</span>  : <span style="padding-left: 200px;"> {{data.fileName}}</span> </div>
+</div>
